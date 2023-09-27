@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .accordian{
+            min-width: 100vw;
+            min-height: 100vh;
+            background-color: beige;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .accordian .accordian-items{
+            width:600px;
+            margin-bottom: 5px;
+
+        }
+        .accordian .accordian-items .accordian-title{
+            background: #dc2b2b;
+            padding: 10px;
+            color:white;
+            font-weight: bold;
+            transition: background 0.5s;
+        }
+        .accordian .accordian-items .accordian-title:hover{
+           background: #9a1616;
+        }
+        .accordian .accordian-items .accordian-content{
+            padding: 10px;
+            background: wheat;
+            display: none;
+            
+            
+        } 
+        .accordian .accordian-items.active .accordian-content{
+            display: block;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="accordian">
+        <div class="accordian-items">
+            <div class="accordian-title">title-1</div>
+            <div class="accordian-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sequi quaerat distinctio, aperiam alias, temporibus non expedita perspiciatis tenetur at cupiditate iusto quis odio asperiores, mollitia consequatur totam repellendus vitae.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordian-items">
+            <div class="accordian-title">title-1</div>
+            <div class="accordian-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sequi quaerat distinctio, aperiam alias, temporibus non expedita perspiciatis tenetur at cupiditate iusto quis odio asperiores, mollitia consequatur totam repellendus vitae.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordian-items">
+            <div class="accordian-title">title-1</div>
+            <div class="accordian-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sequi quaerat distinctio, aperiam alias, temporibus non expedita perspiciatis tenetur at cupiditate iusto quis odio asperiores, mollitia consequatur totam repellendus vitae.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordian-items">
+            <div class="accordian-title">title-1</div>
+            <div class="accordian-content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sequi quaerat distinctio, aperiam alias, temporibus non expedita perspiciatis tenetur at cupiditate iusto quis odio asperiores, mollitia consequatur totam repellendus vitae.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.js"
+    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
+    <script>
+        // let accordian = document.querySelectorAll(".accordian-items");
+        // let title= document.querySelectorAll(".accordian-title");
+        
+        // for(let i = 0;i<=accordian.length;i++){
+        //     accordian[i].addEventListener('click',function(){
+        //         for(let j = 0;j<=accordian.length;j++)
+        //         {
+        //             if(accordian[i] != title){
+
+        //             }
+        //         }
+        //     });
+            
+        // }
+        $(document).ready(function(){
+            $(".accordian-title").click(function(){
+                $(".accordian-items .accordian-content").slideUp();
+                $(this).next('.accordian-content').slideDown();
+            });
+        });
+    </script>
+</body>
+</html>
